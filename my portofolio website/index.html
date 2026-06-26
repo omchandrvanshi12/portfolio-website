@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Om Chandravanshi | Web Developer & AI Expert</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050816;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00e5ff30;
+            filter: blur(150px);
+            top: -100px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #ff006e30;
+            filter: blur(150px);
+            bottom: -100px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00e5ff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h3 {
+            font-size: 25px;
+            color: #00e5ff;
+        }
+
+        .hero-text h1 {
+            font-size: 65px;
+            margin: 10px 0;
+        }
+
+        .typing {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ff006e;
+            height: 40px;
+        }
+
+        .hero-text p {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            margin-right: 15px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .primary {
+            background: #00e5ff;
+            color: black;
+        }
+
+        .secondary {
+            border: 2px solid #ff006e;
+            color: #ff006e;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #00e5ff;
+            box-shadow:
+                0 0 30px #00e5ff,
+                0 0 60px #00e5ff50;
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 50px;
+            color: #00e5ff;
+        }
+
+        .about {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            border-color: #00e5ff;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: #ff006e;
+        }
+
+        .project h3 {
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .socials {
+            margin-top: 20px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #00e5ff;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        @media(max-width:768px) {
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 280px;
+            }
+
+            nav {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">OM.</div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>Om Chandravanshi</h1>
+
+            <div class="typing">
+                <span id="typing"></span>
+            </div>
+
+            <p>
+                Passionate Web Developer, AI Creator and Content Creator.
+                I build modern websites, AI-powered applications and
+                innovative digital experiences.
+            </p>
+
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Hire Me</a>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="profile.jpg" alt="Om Chandravanshi">
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I'm Om Chandravanshi, a passionate Web Developer and AI Creator.
+                I specialize in creating responsive websites, AI-powered tools,
+                automation solutions and educational coding content.
+
+                My goal is to combine modern web technologies and artificial
+                intelligence to create impactful digital experiences.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <a href="/preview.html">HTML5</a>
+            </div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">AI Tools</div>
+            <div class="skill">Prompt Engineering</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">Git & GitHub</div>
+
+        </div>
+
+    </section>
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>AI Chatbot</h3>
+                <p>Intelligent chatbot powered by AI APIs.</p>
+            </div>
+
+            <div class="project">
+                <h3>AI Image Generator</h3>
+                <p>Create amazing images using AI technology.</p>
+            </div>
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>Modern responsive personal portfolio.</p>
+            </div>
+
+            <div class="project">
+                <h3>E-Commerce Store</h3>
+                <p>Full responsive online shopping platform.</p>
+            </div>
+
+            <div class="project">
+                <h3>Landing Page Design</h3>
+                <p>High-converting business landing pages.</p>
+            </div>
+
+            <div class="project">
+                <h3>YouTube Coding Platform</h3>
+                <p>Educational coding website for learners.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact">
+
+            <p><strong>Email:</strong> omc760294@gmail.com</p>
+
+            <p><strong>Instagram:</strong> @om.chandrawanshi.1</p>
+
+            <p><strong>GitHub:</strong> github.com/omchandrvanshi12</p>
+
+            <div class="socials">
+                <a href="https://github.com/omchandrvanshi12">GitHub</a>
+                <a href="https://instagram.com/om.chandrawanshi.1">Instagram</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026 Om Chandravanshi | Web Developer & AI Expert
+
+    </footer>
+
+    <script>
+
+        const ip = " 10.200.224.214".trim();
+
+        const texts = [
+            "Web Developer",
+            "AI Expert",
+            "Content Creator",
+            "Python Developer"
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        (function type() {
+
+            if (count === texts.length) {
+                count = 0;
+            }
+
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            document.getElementById('typing').textContent = letter;
+
+            if (letter.length === currentText.length) {
+
+                setTimeout(() => {
+                    count++;
+                    index = 0;
+                    type();
+                }, 1200);
+
+            } else {
+                setTimeout(type, 100);
+            }
+
+        })();
+
+    </script>
+
+</body>
+
+</html>
